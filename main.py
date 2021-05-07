@@ -1,3 +1,5 @@
+import time
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -82,12 +84,13 @@ class LinkedList:
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insert_start(1)
-    ll.insert_end(2)
-    ll.insert_start(3)
-    ll.insert_end(4)
-    ll.insert_start(5)
-    ll.insert_end(6)
-    ll.traverse()
-    ll.reverse_list()
-    ll.traverse()
+    now1 = time.time()
+    for i in range(0, 50000):
+        ll.insert_start(i)
+    print(f"time required: {str(time.time()-now1)}")
+
+    array = []
+    now2 = time.time()
+    for i in range(0, 50000):
+        array.append(i)
+    print(f"time required for appending array: {str(time.time()-now2)}")
