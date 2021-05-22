@@ -1,0 +1,18 @@
+def minimal_number_of_packages(items, available_large_packages, available_small_packages):
+    countl = 0
+    counts = 0
+    if available_large_packages and items:
+        if items > 5:
+            for i in range(available_large_packages):
+                if countl < available_large_packages and items > 5:
+                    items -= 5
+                    countl += 1
+    if available_small_packages and items:
+        for j in range(items):
+            if counts < available_small_packages:
+                items -= 1
+                counts += 1
+    return countl, counts
+
+
+print(minimal_number_of_packages(16, 2, 10))
