@@ -1,0 +1,16 @@
+num = int(input("enter your choice:"))
+n = int(num/2)
+
+my_star = ('*'*i for i in range(1,num+1,2))
+my_star2 = ('*'*i for i in range(n+1,0,-2))
+
+
+for i in range(n+1,0,-1):
+    for j in my_star:
+        i -= 1
+        print (' '*i,j)
+
+for i in range(1,n+1):
+    for j in my_star2:
+        print (' '*i,j)
+        i += 1
